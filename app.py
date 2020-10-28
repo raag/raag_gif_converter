@@ -42,6 +42,7 @@ def convert_file():
         response = send_file(created_gif)
         os.remove(destiny_path)
         os.remove(created_gif)
+        response.headers['Access-Control-Allow-Origin'] = '*'
         return response, 200
     except ValueError as error:
         print(error)
