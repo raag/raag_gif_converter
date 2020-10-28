@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  app:
+    image: raagpc/raag_gif_converter:0.9
+    ports:
+      - 5000:5000
+    restart: always
+
