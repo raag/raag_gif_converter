@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, make_response
 from werkzeug.utils import secure_filename
 import os
 
@@ -46,7 +46,10 @@ def convert_file():
         return response, 200
     except ValueError as error:
         print(error)
-        return str(error), 400
+        response = make_response()
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.data = str(error)
+        return response, 400
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
