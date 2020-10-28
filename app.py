@@ -12,7 +12,8 @@ ALLOWED_EXTENSIONS = {
     'mkv',
     'mp4',
     'mpeg',
-    'mpg'
+    'mpg',
+    'mov'
 }
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
