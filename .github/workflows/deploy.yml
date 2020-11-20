@@ -4,6 +4,6 @@ jobs:
   check-bats-version:
     runs-on: self-hosted
     steps:
-      - run: echo "Hola"
-      - run: docker ps -a
+      - run: docker build -t raagpc/raag_gif_converter:0.9.1 . 
+      - run: docker-compose -f docker-compose.yml up -d --force-recreate
 
