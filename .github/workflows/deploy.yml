@@ -2,7 +2,7 @@ name: build
 on: [push]
 jobs:
   check-bats-version:
-    runs-on: alpine
+    runs-on: alpine-latest
     steps:
       - run: echo "Hola"
 
