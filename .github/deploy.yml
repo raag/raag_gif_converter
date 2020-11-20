@@ -1,0 +1,8 @@
+name: build
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: alpine
+    steps:
+      - run: echo "Hola"
+
