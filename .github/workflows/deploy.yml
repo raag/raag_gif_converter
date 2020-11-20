@@ -4,7 +4,11 @@ jobs:
   check-bats-version:
     runs-on: self-hosted
     steps:
+      - env:
+        - DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        - DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - uses: actions/checkout@v2
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       - run: docker build -t raagpc/raag_gif_converter:0.9.1 . 
       - run: docker-compose -f docker-compose.yml up -d --force-recreate
 
